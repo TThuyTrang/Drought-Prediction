@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data files - keep datasets local
+data/raw/*
+data/processed/*
+
+# Allow documentation explaining data folders
+!data/raw/README.md
+!data/processed/README.md
+
+# Temporary files
+*.log
+.DS_Store
