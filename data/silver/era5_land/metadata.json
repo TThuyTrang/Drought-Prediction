@@ -1,0 +1,35 @@
+{
+    "dataset_name": "ERA5-Land Mekong Delta",
+    "source_file": "/home/trang/Drought_prediction/data/bronze/era5_land/era5_land_monthly_2000_2025.nc",
+    "output_file": "/home/trang/Drought_prediction/data/silver/era5_land/era5_land_mekong_delta_2000_2025.nc",
+    "format": "NetCDF",
+    "spatial_boundary": "13 provinces/cities in the historical Mekong Delta study boundary",
+    "crs": "EPSG:4326",
+    "time_range": {
+        "start": "2000-01-01",
+        "end": "2025-12-01"
+    },
+    "frequency": "Monthly",
+    "dimensions": {
+        "valid_time": 312,
+        "latitude": 32,
+        "longitude": 38
+    },
+    "variables": [
+        "d2m",
+        "t2m",
+        "swvl1",
+        "swvl2",
+        "swvl3",
+        "swvl4",
+        "pev",
+        "tp"
+    ],
+    "valid_grid_cells": 326,
+    "missing_data_policy": "Preserve NaN; no imputation",
+    "transformations": [
+        "Spatial clipping using dissolved Mekong Delta boundary",
+        "Preserve original ERA5-Land variable values and units",
+        "Retain original grid dimensions"
+    ]
+}

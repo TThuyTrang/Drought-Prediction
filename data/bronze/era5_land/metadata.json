@@ -1,0 +1,10 @@
+{
+    "dataset": "ERA5-Land Monthly",
+    "source_file": "data/raw/era5_land_monthly_2000_2025.nc",
+    "bronze_file": "data/bronze/era5_land/era5_land_monthly_2000_2025.nc",
+    "format": "NetCDF",
+    "file_size_mb": 3.2,
+    "time_range": "2000-01 to 2025-12",
+    "frequency": "Monthly",
+    "ingestion_status": "success"
+}

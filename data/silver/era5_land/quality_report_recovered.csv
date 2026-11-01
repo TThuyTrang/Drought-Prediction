@@ -1,0 +1,3 @@
+variable,valid_values,missing_values,min,max,units,negative_values,recovery_applied,recovery_period
+tp,101712,277680,7.904102858447004e-06,0.02109147608280182,m,0,True,2022-09 to 2024-02
+pev,101712,277680,-0.05014606565237045,-0.003270551562309265,m,101712,True,2022-09 to 2024-02
