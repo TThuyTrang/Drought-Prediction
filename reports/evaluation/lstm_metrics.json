@@ -1,0 +1,98 @@
+{
+  "model": "LSTM",
+  "target": "spei_3m",
+  "window_months": 12,
+  "horizon_months": 1,
+  "features": [
+    "temp_mean_celsius",
+    "precip_monthly_mm",
+    "water_balance_mm",
+    "soil_moisture_surface",
+    "soil_moisture_rootzone",
+    "spi_3m",
+    "spei_3m",
+    "precip_lag_1m",
+    "precip_lag_2m",
+    "spei_3m_lag_1m",
+    "spei_3m_lag_2m",
+    "latitude",
+    "longitude",
+    "month_sin",
+    "month_cos"
+  ],
+  "split": {
+    "train_targets_before": "2019-01-01",
+    "validation": [
+      "2019-01-01",
+      "2022-01-01"
+    ],
+    "test_from": "2022-01-01",
+    "test_last_target_month": "2025-12",
+    "n_train": 68786,
+    "n_val": 11736,
+    "n_test": 15648
+  },
+  "training": {
+    "best_epoch": 7,
+    "epochs_run": 19,
+    "best_val_loss_scaled": 0.0019636524742153035,
+    "final_train_loss_scaled": 0.0018042932118775266,
+    "seed": 42
+  },
+  "validation": {
+    "n_samples": 11736,
+    "lstm": {
+      "rmse": 0.23320183723323515,
+      "mae": 0.17865182641458474,
+      "r2": 0.9527491556262353
+    },
+    "persistence": {
+      "rmse": 0.5820446275816258,
+      "mae": 0.49910707840195995,
+      "r2": 0.705653952501561
+    },
+    "lstm_drought": {
+      "threshold": -1.0,
+      "n_drought_months": 3424,
+      "precision": 0.9708920187793427,
+      "recall": 0.9059579439252337,
+      "f1": 0.9373017072065266
+    },
+    "persistence_drought": {
+      "threshold": -1.0,
+      "n_drought_months": 3424,
+      "precision": 0.7143691588785047,
+      "recall": 0.7143691588785047,
+      "f1": 0.7143691588785047
+    },
+    "skill_vs_persistence_rmse": 0.5993402804829927
+  },
+  "test": {
+    "n_samples": 15648,
+    "lstm": {
+      "rmse": 0.24489215190719474,
+      "mae": 0.18750879915414165,
+      "r2": 0.9269951223631496
+    },
+    "persistence": {
+      "rmse": 0.5658387493552048,
+      "mae": 0.4565514572124984,
+      "r2": 0.6102487534927499
+    },
+    "lstm_drought": {
+      "threshold": -1.0,
+      "n_drought_months": 2784,
+      "precision": 0.7937464142283419,
+      "recall": 0.9938936781609196,
+      "f1": 0.882615629984051
+    },
+    "persistence_drought": {
+      "threshold": -1.0,
+      "n_drought_months": 2784,
+      "precision": 0.5671695402298851,
+      "recall": 0.5671695402298851,
+      "f1": 0.5671695402298851
+    },
+    "skill_vs_persistence_rmse": 0.5672050523470533
+  }
+}
