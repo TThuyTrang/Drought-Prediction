@@ -1,0 +1,74 @@
+{
+  "model": "XGBoost",
+  "target": "spei_3m",
+  "horizon_months": 1,
+  "drought_threshold": -1.0,
+  "features": [
+    "temp_mean_celsius",
+    "precip_monthly_mm",
+    "water_balance_mm",
+    "soil_moisture_surface",
+    "soil_moisture_rootzone",
+    "spi_3m",
+    "spei_3m",
+    "precip_lag_1m",
+    "precip_lag_2m",
+    "spei_3m_lag_1m",
+    "spei_3m_lag_2m",
+    "latitude",
+    "longitude",
+    "month_sin",
+    "month_cos"
+  ],
+  "split": {
+    "validation_start": "2019-01-01",
+    "test_start": "2022-01-01",
+    "test_last_target_month": "2025-12",
+    "n_train": 72372,
+    "n_validation": 11736,
+    "n_test": 15648
+  },
+  "training": {
+    "best_iteration": 87,
+    "best_validation_rmse": 0.23234703863490813,
+    "seed": 42
+  },
+  "validation": {
+    "xgboost": {
+      "n_samples": 11736,
+      "rmse": 0.2323470435970494,
+      "mae": 0.1759410947561264,
+      "r2": 0.9530948996543884,
+      "drought_threshold": -1.0,
+      "actual_drought_count": 3424,
+      "precision": 0.9614918132201334,
+      "recall": 0.9261098130841121,
+      "f1": 0.9434692055935734
+    }
+  },
+  "test": {
+    "xgboost": {
+      "n_samples": 15648,
+      "rmse": 0.25101690302124846,
+      "mae": 0.19498997926712036,
+      "r2": 0.9232977628707886,
+      "drought_threshold": -1.0,
+      "actual_drought_count": 2784,
+      "precision": 0.8369085173501577,
+      "recall": 0.9529454022988506,
+      "f1": 0.891165602955996
+    },
+    "persistence": {
+      "n_samples": 15648,
+      "rmse": 0.5658387860254068,
+      "mae": 0.4565514624118805,
+      "r2": 0.6102487444877625,
+      "drought_threshold": -1.0,
+      "actual_drought_count": 2784,
+      "precision": 0.5671695402298851,
+      "recall": 0.5671695402298851,
+      "f1": 0.5671695402298851
+    },
+    "skill_vs_persistence_rmse": 0.5563808822925449
+  }
+}

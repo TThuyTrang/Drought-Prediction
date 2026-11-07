@@ -14,8 +14,10 @@ dependencies = [
     "pyarrow>=26.0.0",
     "pyproj>=3.8.0",
     "regionmask>=0.13.0",
+    "scikit-learn>=1.6.0",
     "scipy>=1.18.1",
     "seaborn>=0.13.2",
     "shapely>=2.2.0",
     "xarray>=2026.9.0",
+    "xgboost>=2.1.0",
 ]
